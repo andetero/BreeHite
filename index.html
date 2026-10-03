@@ -2,60 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Bree Hite | Horseback Adventures</title>
   <meta name="description" content="Horseback adventures through beautiful places across the United States.">
-  <meta name="theme-color" content="#171814">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css">
+  <meta name="theme-color" content="#11130f">
+  <style>
+    *{box-sizing:border-box}
+    html,body{margin:0;min-height:100%;background:#11130f;color:#fff}
+    body{font-family:Arial,Helvetica,sans-serif}
+    .hero{min-height:100svh;position:relative;display:flex;align-items:flex-end;overflow:hidden;background:linear-gradient(145deg,#34402d,#11130f)}
+    .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+    .overlay{position:absolute;inset:0;background:
+      linear-gradient(90deg,rgba(0,0,0,.72) 0%,rgba(0,0,0,.34) 50%,rgba(0,0,0,.14) 100%),
+      linear-gradient(0deg,rgba(0,0,0,.5),transparent 48%)}
+    header{position:absolute;z-index:3;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:28px clamp(22px,5vw,70px);border-bottom:1px solid rgba(255,255,255,.18)}
+    .brand{font-weight:800;letter-spacing:.2em;font-size:.82rem}
+    header a{color:#fff;text-decoration:none;text-transform:uppercase;letter-spacing:.15em;font-size:.7rem}
+    .content{position:relative;z-index:2;max-width:1000px;padding:140px clamp(22px,7vw,110px) clamp(60px,8vw,110px)}
+    .eyebrow{margin:0 0 20px;text-transform:uppercase;letter-spacing:.24em;font-size:.7rem;font-weight:700;color:#eee8dc}
+    h1{margin:0;font-family:Georgia,"Times New Roman",serif;font-weight:400;font-size:clamp(4rem,10vw,9rem);line-height:.84;letter-spacing:-.06em}
+    .intro{max-width:590px;margin:30px 0 0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.15rem,2vw,1.55rem);line-height:1.5;color:#f2efe8}
+    .button{display:inline-block;margin-top:30px;padding:14px 19px;border:1px solid rgba(255,255,255,.8);color:#fff;text-decoration:none;text-transform:uppercase;letter-spacing:.14em;font-size:.69rem}
+    .button:hover{background:#fff;color:#11130f}
+    .domain{position:absolute;z-index:2;right:clamp(22px,5vw,70px);bottom:36px;text-transform:uppercase;letter-spacing:.18em;font-size:.61rem;color:rgba(255,255,255,.72)}
+    @media(max-width:650px){
+      header{padding:22px}
+      .content{padding:125px 22px 65px}
+      h1{font-size:clamp(3.8rem,18vw,6rem)}
+      .domain{display:none}
+    }
+  </style>
 </head>
 <body>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="Bree Hite home">BREE HITE</a>
-    <nav>
-      <a href="#rides">Rides</a>
+  <main class="hero">
+    <img
+      src="https://graph.facebook.com/bree.hite/picture?type=large&width=1600&height=1600"
+      alt="Bree Hite"
+      onerror="this.style.display='none'">
+    <div class="overlay" aria-hidden="true"></div>
+
+    <header>
+      <div class="brand">BREE HITE</div>
       <a href="https://www.facebook.com/bree.hite" target="_blank" rel="noopener noreferrer">Facebook</a>
-    </nav>
-  </header>
+    </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="hero-mark" aria-hidden="true">BH</div>
-      <div class="hero-copy">
-        <p class="eyebrow">HORSEBACK ADVENTURES</p>
-        <h1>Wild country.<br>Good horses.<br>Long trails.</h1>
-        <p class="intro">A collection of rides through some of the most beautiful places in the American West and beyond.</p>
-        <a class="cta" href="#rides">Explore the rides</a>
-      </div>
-      <div class="scroll-cue" aria-hidden="true">SCROLL</div>
+    <section class="content">
+      <p class="eyebrow">Horseback Adventures</p>
+      <h1>Wild country.<br>Good horses.<br>Long trails.</h1>
+      <p class="intro">Exploring beautiful country one trail at a time.</p>
+      <a class="button" href="https://www.facebook.com/bree.hite" target="_blank" rel="noopener noreferrer">Follow the rides</a>
     </section>
 
-    <section class="gallery-section" id="rides">
-      <div class="section-heading">
-        <p class="eyebrow">ON THE TRAIL</p>
-        <h2>Latest rides</h2>
-      </div>
-      <div id="gallery" class="gallery" aria-live="polite"></div>
-      <div id="empty-state" class="empty-state" hidden>
-        <p>Horse photos are being gathered for the gallery.</p>
-      </div>
-    </section>
+    <div class="domain">BreeHite.com</div>
   </main>
-
-  <dialog id="lightbox" class="lightbox">
-    <button class="lightbox-close" aria-label="Close photo">&times;</button>
-    <img id="lightbox-image" alt="">
-    <div class="lightbox-meta">
-      <p id="lightbox-caption"></p>
-      <a id="lightbox-source" target="_blank" rel="noopener noreferrer">View original post</a>
-    </div>
-  </dialog>
-
-  <footer>
-    <p>Horseback adventures by Bree Hite</p>
-    <p>© <span id="year"></span> Bree Hite</p>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
