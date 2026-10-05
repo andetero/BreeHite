@@ -3,14 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Bree Hite | Horseback Adventures</title>
-  <meta name="description" content="Bree Hite's horseback adventures through mountains, forests, deserts and alpine country.">
+  <title>Bree Hite | Horseback Travel Journal</title>
+  <meta name="description" content="Bree Hite's horseback travel journal: scenic rides, trail notes, horse camping, favorite places and stories from the saddle.">
   <meta name="theme-color" content="#11130f">
   <style>
     :root{
       --ink:#11130f;
       --paper:#f3efe6;
+      --paper2:#e7e0d2;
       --muted:#67695f;
+      --line:rgba(17,19,15,.14);
       --max:1460px;
     }
     *{box-sizing:border-box}
@@ -18,151 +20,87 @@
     body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
     img{display:block;max-width:100%}
     a{color:inherit}
-    .hero{
-      min-height:100svh;
-      position:relative;
-      display:flex;
-      align-items:flex-end;
-      overflow:hidden;
-      background:#11130f;
-      color:#fff;
-    }
-    .hero>img{
-      position:absolute;inset:0;width:100%;height:100%;
-      object-fit:cover;object-position:center 48%;
-      transform:scale(1.002);
-    }
-    .hero:after{
-      content:"";position:absolute;inset:0;
-      background:
-        linear-gradient(90deg,rgba(0,0,0,.66) 0%,rgba(0,0,0,.24) 48%,rgba(0,0,0,.10) 100%),
-        linear-gradient(0deg,rgba(0,0,0,.50),transparent 52%);
-    }
-    .masthead{
-      position:absolute;z-index:3;top:0;left:0;right:0;
-      display:flex;align-items:center;justify-content:space-between;
-      padding:27px clamp(22px,5vw,72px);
-      border-bottom:1px solid rgba(255,255,255,.22);
-    }
+    h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+    .hero{min-height:100svh;position:relative;display:flex;align-items:flex-end;overflow:hidden;background:#11130f;color:#fff}
+    .hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 48%;transform:scale(1.002)}
+    .hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.68) 0%,rgba(0,0,0,.25) 49%,rgba(0,0,0,.08) 100%),linear-gradient(0deg,rgba(0,0,0,.50),transparent 52%)}
+    .masthead{position:absolute;z-index:3;top:0;left:0;right:0;display:flex;align-items:center;justify-content:space-between;padding:27px clamp(22px,5vw,72px);border-bottom:1px solid rgba(255,255,255,.22)}
     .brand{font-weight:800;letter-spacing:.21em;font-size:.83rem}
-    .masthead a{text-decoration:none;text-transform:uppercase;letter-spacing:.16em;font-size:.67rem}
-    .hero-copy{
-      position:relative;z-index:2;
-      width:min(900px,92vw);
-      padding:150px clamp(22px,7vw,108px) clamp(58px,8vw,106px);
-      text-shadow:0 3px 28px rgba(0,0,0,.35);
-    }
-    .kicker{
-      margin:0 0 20px;
-      text-transform:uppercase;
-      letter-spacing:.25em;
-      font-size:.69rem;
-      font-weight:700;
-    }
-    h1,h2{font-family:Georgia,"Times New Roman",serif;font-weight:400}
-    h1{
-      margin:0;
-      font-size:clamp(4.2rem,10vw,9rem);
-      line-height:.83;
-      letter-spacing:-.065em;
-    }
-    .hero-copy p:last-child{
-      max-width:570px;margin:30px 0 0;
-      font-family:Georgia,"Times New Roman",serif;
-      font-size:clamp(1.15rem,2vw,1.55rem);
-      line-height:1.5;color:#f4f1ea;
-    }
-    .domain{
-      position:absolute;z-index:2;right:clamp(22px,5vw,72px);bottom:38px;
-      text-transform:uppercase;letter-spacing:.2em;font-size:.6rem;
-      color:rgba(255,255,255,.74);
-    }
-    .intro{
-      max-width:var(--max);margin:auto;
-      padding:clamp(75px,10vw,150px) clamp(22px,5vw,72px);
-      display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);
-      gap:clamp(35px,7vw,120px);align-items:start;
-    }
-    .intro .label{
-      text-transform:uppercase;letter-spacing:.2em;font-size:.67rem;
-      color:var(--muted);font-weight:700;padding-top:12px;
-    }
-    .intro h2{
-      margin:0;font-size:clamp(3rem,6vw,6.6rem);
-      line-height:.95;letter-spacing:-.05em;
-    }
-    .intro p{
-      margin:26px 0 0;max-width:700px;
-      font-family:Georgia,"Times New Roman",serif;
-      font-size:clamp(1.05rem,1.7vw,1.35rem);
-      line-height:1.65;color:#44463f;
-    }
-    .feature{
-      max-width:var(--max);margin:0 auto;
-      padding:0 clamp(14px,3vw,42px) clamp(70px,8vw,130px);
-    }
-    .feature-grid{
-      display:grid;grid-template-columns:1.25fr .75fr;gap:16px;
-    }
+    nav{display:flex;gap:24px}
+    nav a{text-decoration:none;text-transform:uppercase;letter-spacing:.16em;font-size:.65rem}
+    .hero-copy{position:relative;z-index:2;width:min(930px,92vw);padding:150px clamp(22px,7vw,108px) clamp(58px,8vw,106px);text-shadow:0 3px 28px rgba(0,0,0,.35)}
+    .kicker,.eyebrow{margin:0 0 20px;text-transform:uppercase;letter-spacing:.24em;font-size:.68rem;font-weight:700}
+    h1{margin:0;font-size:clamp(4.2rem,10vw,9rem);line-height:.83;letter-spacing:-.065em}
+    .hero-copy .sub{max-width:630px;margin:30px 0 0;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.15rem,2vw,1.55rem);line-height:1.5;color:#f4f1ea}
+    .hero-cta{display:inline-block;margin-top:28px;padding:14px 18px;border:1px solid rgba(255,255,255,.78);text-decoration:none;text-transform:uppercase;letter-spacing:.14em;font-size:.68rem}
+    .hero-cta:hover{background:#fff;color:var(--ink)}
+    .domain{position:absolute;z-index:2;right:clamp(22px,5vw,72px);bottom:38px;text-transform:uppercase;letter-spacing:.2em;font-size:.6rem;color:rgba(255,255,255,.74)}
+    .intro{max-width:var(--max);margin:auto;padding:clamp(75px,10vw,150px) clamp(22px,5vw,72px);display:grid;grid-template-columns:minmax(0,.7fr) minmax(0,1.3fr);gap:clamp(35px,7vw,120px);align-items:start}
+    .label{padding-top:12px;text-transform:uppercase;letter-spacing:.2em;font-size:.67rem;color:var(--muted);font-weight:700}
+    .intro h2{margin:0;font-size:clamp(3rem,6vw,6.5rem);line-height:.95;letter-spacing:-.05em}
+    .intro p{margin:26px 0 0;max-width:730px;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.05rem,1.7vw,1.35rem);line-height:1.65;color:#44463f}
+    .journal{background:#e7e0d2;padding:clamp(75px,9vw,135px) clamp(18px,4vw,58px)}
+    .section-head{max-width:var(--max);margin:0 auto 34px;display:flex;align-items:end;justify-content:space-between;gap:28px}
+    .section-head h2{margin:0;font-size:clamp(3rem,6vw,6rem);line-height:.95;letter-spacing:-.05em}
+    .section-head p{max-width:520px;margin:0 0 8px;color:var(--muted);line-height:1.55}
+    .journal-grid{max-width:var(--max);margin:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .ride-card{background:var(--paper);overflow:hidden;border:1px solid rgba(17,19,15,.08)}
+    .ride-card img{width:100%;aspect-ratio:4/3;object-fit:cover}
+    .ride-body{padding:24px}
+    .ride-body .eyebrow{margin-bottom:10px;color:var(--muted);font-size:.61rem}
+    .ride-body h3{font-size:clamp(1.8rem,3vw,2.8rem);line-height:1;margin:0 0 14px}
+    .ride-body p{margin:0;color:#505249;line-height:1.6}
+    .ride-meta{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}
+    .ride-meta span{border:1px solid var(--line);padding:7px 9px;font-size:.61rem;letter-spacing:.08em;text-transform:uppercase;color:#5d6056}
+    .utility{max-width:var(--max);margin:auto;padding:clamp(80px,10vw,150px) clamp(22px,5vw,72px)}
+    .utility-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(36px,7vw,100px);align-items:center}
+    .utility h2{margin:0;font-size:clamp(3rem,6vw,6.3rem);line-height:.95;letter-spacing:-.05em}
+    .utility-copy p{font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.05rem,1.7vw,1.35rem);line-height:1.65;color:#44463f}
+    .check-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:25px}
+    .check{padding:16px;border-top:1px solid var(--line);font-size:.77rem;letter-spacing:.09em;text-transform:uppercase}
+    .horsecamp{background:var(--ink);color:#fff;padding:clamp(78px,10vw,145px) clamp(22px,7vw,108px)}
+    .horsecamp-inner{max-width:var(--max);margin:auto;display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(35px,7vw,110px);align-items:start}
+    .horsecamp .eyebrow{color:#aeb2a6}
+    .horsecamp h2{margin:0;font-size:clamp(3.2rem,7vw,7rem);line-height:.92;letter-spacing:-.05em}
+    .horsecamp p{max-width:680px;margin:24px 0 0;color:#d0d2ca;font-family:Georgia,"Times New Roman",serif;font-size:clamp(1.05rem,1.8vw,1.35rem);line-height:1.6}
+    .hc-button{display:inline-block;margin-top:28px;padding:14px 18px;border:1px solid rgba(255,255,255,.65);text-decoration:none;text-transform:uppercase;letter-spacing:.14em;font-size:.68rem}
+    .hc-button:hover{background:#fff;color:var(--ink)}
+    .feature{max-width:var(--max);margin:0 auto;padding:clamp(80px,9vw,140px) clamp(14px,3vw,42px) 35px}
+    .feature-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:16px}
     .feature-card{position:relative;overflow:hidden;background:#d9d2c4}
     .feature-card img{width:100%;height:100%;object-fit:cover}
     .feature-card:first-child{min-height:min(72vw,820px)}
     .feature-stack{display:grid;grid-template-rows:1fr 1fr;gap:16px}
     .feature-stack .feature-card{min-height:320px}
-    .section-head{
-      max-width:var(--max);margin:auto;
-      padding:0 clamp(22px,5vw,72px) 34px;
-      display:flex;align-items:end;justify-content:space-between;gap:25px;
-    }
-    .section-head h2{margin:0;font-size:clamp(2.8rem,6vw,5.8rem);letter-spacing:-.05em}
-    .section-head p{
-      margin:0 0 10px;text-transform:uppercase;letter-spacing:.18em;
-      font-size:.64rem;color:var(--muted);
-    }
-    .gallery{
-      max-width:var(--max);margin:0 auto;
-      padding:0 clamp(14px,3vw,42px) clamp(80px,10vw,150px);
-      columns:3 330px;column-gap:16px;
-    }
-    .shot{
-      display:block;width:100%;padding:0;border:0;background:#d7d0c2;
-      margin:0 0 16px;break-inside:avoid;cursor:zoom-in;overflow:hidden;
-    }
+    .gallery-head{max-width:var(--max);margin:auto;padding:55px clamp(22px,5vw,72px) 34px;display:flex;align-items:end;justify-content:space-between;gap:25px}
+    .gallery-head h2{margin:0;font-size:clamp(2.8rem,6vw,5.8rem);letter-spacing:-.05em}
+    .gallery-head p{margin:0 0 10px;text-transform:uppercase;letter-spacing:.18em;font-size:.64rem;color:var(--muted)}
+    .gallery{max-width:var(--max);margin:0 auto;padding:0 clamp(14px,3vw,42px) clamp(80px,10vw,150px);columns:3 330px;column-gap:16px}
+    .shot{display:block;width:100%;padding:0;border:0;background:#d7d0c2;margin:0 0 16px;break-inside:avoid;cursor:zoom-in;overflow:hidden}
     .shot img{width:100%;height:auto;transition:transform .5s ease}
     .shot:hover img,.shot:focus-visible img{transform:scale(1.015)}
-    .quote{
-      background:var(--ink);color:#f6f1e8;
-      padding:clamp(70px,10vw,150px) clamp(22px,7vw,108px);
-      text-align:center;
-    }
-    .quote p{
-      max-width:1050px;margin:auto;
-      font-family:Georgia,"Times New Roman",serif;
-      font-size:clamp(2rem,5vw,5rem);line-height:1.06;letter-spacing:-.035em;
-    }
-    footer{
-      background:var(--ink);color:#a9aa9f;
-      border-top:1px solid rgba(255,255,255,.13);
-      padding:30px clamp(22px,5vw,72px);
-      display:flex;justify-content:space-between;gap:20px;
-      font-size:.68rem;letter-spacing:.09em;text-transform:uppercase;
-    }
-    dialog{
-      border:0;padding:0;background:#0c0d0b;color:#fff;
-      width:min(96vw,1600px);max-width:none;
-      box-shadow:0 30px 100px rgba(0,0,0,.6);
-    }
+    .recommends{background:#ddd5c7;padding:clamp(75px,9vw,130px) clamp(22px,5vw,72px)}
+    .rec-inner{max-width:var(--max);margin:auto}
+    .rec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(17,19,15,.15);margin-top:34px}
+    .rec{background:#eee8dc;padding:30px;min-height:235px}
+    .rec .num{font-size:.62rem;letter-spacing:.14em;color:var(--muted)}
+    .rec h3{font-size:2rem;margin:48px 0 12px}
+    .rec p{margin:0;color:#52554c;line-height:1.55}
+    .quote{background:var(--ink);color:#f6f1e8;padding:clamp(70px,10vw,150px) clamp(22px,7vw,108px);text-align:center}
+    .quote p{max-width:1050px;margin:auto;font-family:Georgia,"Times New Roman",serif;font-size:clamp(2rem,5vw,5rem);line-height:1.06;letter-spacing:-.035em}
+    footer{background:var(--ink);color:#a9aa9f;border-top:1px solid rgba(255,255,255,.13);padding:30px clamp(22px,5vw,72px);display:flex;justify-content:space-between;gap:20px;font-size:.68rem;letter-spacing:.09em;text-transform:uppercase}
+    dialog{border:0;padding:0;background:#0c0d0b;color:#fff;width:min(96vw,1600px);max-width:none;box-shadow:0 30px 100px rgba(0,0,0,.6)}
     dialog::backdrop{background:rgba(0,0,0,.92)}
     dialog img{max-width:100%;max-height:90vh;margin:auto}
-    .close{
-      position:fixed;top:18px;right:23px;z-index:10;
-      width:44px;height:44px;border:1px solid rgba(255,255,255,.5);
-      border-radius:50%;background:rgba(0,0,0,.32);color:#fff;
-      font-size:1.8rem;line-height:1;cursor:pointer;
+    .close{position:fixed;top:18px;right:23px;z-index:10;width:44px;height:44px;border:1px solid rgba(255,255,255,.5);border-radius:50%;background:rgba(0,0,0,.32);color:#fff;font-size:1.8rem;line-height:1;cursor:pointer}
+    @media(max-width:900px){
+      .journal-grid,.rec-grid{grid-template-columns:1fr}
+      .utility-grid,.horsecamp-inner{grid-template-columns:1fr}
     }
     @media(max-width:800px){
       .hero>img{object-position:58% center}
       .masthead{padding:22px}
+      nav{gap:14px}
       .hero-copy{padding:128px 22px 68px}
       h1{font-size:clamp(3.9rem,18vw,6.2rem)}
       .domain{display:none}
@@ -174,15 +112,13 @@
       footer{display:block;line-height:1.8}
     }
     @media(max-width:520px){
-      .masthead a{display:none}
+      nav a:nth-child(2){display:none}
       .feature-stack{grid-template-columns:1fr}
       .feature-stack .feature-card{min-height:62vh}
       .gallery{columns:1}
+      .check-grid{grid-template-columns:1fr}
     }
-    @media(prefers-reduced-motion:reduce){
-      html{scroll-behavior:auto}
-      .shot img{transition:none}
-    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.shot img{transition:none}}
   </style>
 </head>
 <body>
@@ -191,56 +127,140 @@
       <img src="assets/horses/featured/fb-10244321179825167.jpg" alt="Bree beside her paint horse overlooking a turquoise alpine lake and mountain basin">
       <div class="masthead">
         <div class="brand">BREE HITE</div>
-        <a href="#adventures">Adventures</a>
+        <nav>
+          <a href="#journal">Ride Journal</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#horsecamp">HorseCamp</a>
+        </nav>
       </div>
       <div class="hero-copy">
-        <p class="kicker">Horseback Adventures</p>
+        <p class="kicker">Horseback Travel Journal</p>
         <h1>Wild country.<br>Good horses.<br>Long trails.</h1>
-        <p>Exploring beautiful country one trail at a time.</p>
+        <p class="sub">Scenic rides, trail notes, horse camping and favorite places discovered from the saddle.</p>
+        <a class="hero-cta" href="#journal">Explore the journal</a>
       </div>
       <div class="domain">BreeHite.com</div>
     </section>
 
-    <section class="intro" id="adventures">
-      <div class="label">From the saddle</div>
+    <section class="intro">
+      <div class="label">Why this site exists</div>
       <div>
-        <h2>Some places are better reached on horseback.</h2>
-        <p>High country, desert trails, alpine lakes and autumn forests. A collection of favorite moments from miles spent in the saddle.</p>
+        <h2>Ride it. Remember it. Help the next rider.</h2>
+        <p>BreeHite.com is a horseback travel journal built around the places worth remembering: the scenery, the trail, where to park a trailer, where to camp with horses, and whether the ride is worth doing again.</p>
+      </div>
+    </section>
+
+    <section class="journal" id="journal">
+      <div class="section-head">
+        <h2>Ride journal</h2>
+        <p>Each future ride entry can turn a beautiful photo set into something useful for another rider.</p>
+      </div>
+      <div class="journal-grid">
+        <article class="ride-card">
+          <img src="assets/horses/featured/fb-10234142932775352.jpg" alt="Bree riding beneath dramatic mountain peaks">
+          <div class="ride-body">
+            <p class="eyebrow">High country</p>
+            <h3>Mountain rides</h3>
+            <p>Big views, changing weather, steep country and the trail details that matter when hauling horses into the mountains.</p>
+            <div class="ride-meta"><span>Trail</span><span>Difficulty</span><span>Trailer access</span><span>Water</span></div>
+          </div>
+        </article>
+        <article class="ride-card">
+          <img src="assets/horses/featured/fb-10232565569582258.jpg" alt="Horseback riding through a sandstone canyon">
+          <div class="ride-body">
+            <p class="eyebrow">Desert country</p>
+            <h3>Red rock rides</h3>
+            <p>Canyons, slickrock and wide-open country, with notes on footing, exposure, access and the best time of year to ride.</p>
+            <div class="ride-meta"><span>Footing</span><span>Season</span><span>Parking</span><span>Scenery</span></div>
+          </div>
+        </article>
+        <article class="ride-card">
+          <img src="assets/horses/featured/fb-10244955114953149.jpg" alt="Horseback riding beneath golden autumn aspens">
+          <div class="ride-body">
+            <p class="eyebrow">Favorite seasons</p>
+            <h3>Autumn trails</h3>
+            <p>The rides worth timing for fall color, cooler weather and long days exploring forests and mountain meadows.</p>
+            <div class="ride-meta"><span>Best month</span><span>Camping</span><span>Miles</span><span>Would ride again</span></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="utility">
+      <div class="utility-grid">
+        <div>
+          <p class="eyebrow" style="color:var(--muted)">Useful, not just pretty</p>
+          <h2>What every ride page should answer.</h2>
+        </div>
+        <div class="utility-copy">
+          <p>Photos tell the story. The trail notes make the story useful. As the journal grows, each ride can include the practical details horse travelers actually need.</p>
+          <div class="check-grid">
+            <div class="check">Trail distance</div>
+            <div class="check">Difficulty</div>
+            <div class="check">Trailer parking</div>
+            <div class="check">Horse camping</div>
+            <div class="check">Water availability</div>
+            <div class="check">Season & weather</div>
+            <div class="check">Trail conditions</div>
+            <div class="check">Would we ride it again?</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="horsecamp" id="horsecamp">
+      <div class="horsecamp-inner">
+        <div><p class="eyebrow">A tool we use</p></div>
+        <div>
+          <h2>Need a place to camp with your horses?</h2>
+          <p>HorseCamp helps riders find horse-friendly camping while planning the next trip. It fits naturally with the ride journal: find the camp, haul in, ride the country, then save what was worth knowing for next time.</p>
+          <a class="hc-button" href="https://horsecamp.app" target="_blank" rel="noopener noreferrer">Explore HorseCamp</a>
+        </div>
       </div>
     </section>
 
     <section class="feature" aria-label="Featured horseback adventures">
       <div class="feature-grid">
-        <button class="feature-card shot" data-full="assets/horses/featured/fb-10234142932775352.jpg" aria-label="Open Grand Teton horseback portrait">
-          <img src="assets/horses/featured/fb-10234142932775352.jpg" alt="Bree riding her paint horse beneath the Grand Teton mountain range">
+        <button class="feature-card shot" data-full="assets/horses/featured/fb-10234185191471793.jpg" aria-label="Open reflective mountain lake photo">
+          <img src="assets/horses/featured/fb-10234185191471793.jpg" alt="View from horseback beside a glassy mountain lake reflecting dramatic peaks">
         </button>
         <div class="feature-stack">
-          <button class="feature-card shot" data-full="assets/horses/featured/fb-10232565569582258.jpg" aria-label="Open slot canyon horseback photo">
-            <img src="assets/horses/featured/fb-10232565569582258.jpg" alt="Bree riding her paint horse through a narrow sandstone slot canyon">
+          <button class="feature-card shot" data-full="assets/horses/featured/fb-10234315727055101.jpg" aria-label="Open sunset horse photo">
+            <img src="assets/horses/featured/fb-10234315727055101.jpg" alt="Paint horse beneath a brilliant orange sunset">
           </button>
-          <button class="feature-card shot" data-full="assets/horses/featured/fb-10243779678727978.jpg" aria-label="Open high mountain horseback photo">
-            <img src="assets/horses/featured/fb-10243779678727978.jpg" alt="Bree celebrating from horseback high in the mountains">
+          <button class="feature-card shot" data-full="assets/horses/featured/fb-10244319558584637.jpg" aria-label="Open alpine lake horseback photo">
+            <img src="assets/horses/featured/fb-10244319558584637.jpg" alt="Horseback view above a brilliant turquoise alpine lake">
           </button>
         </div>
       </div>
     </section>
 
-    <div class="section-head">
-      <h2>Trail journal</h2>
-      <p>The best views from the saddle</p>
+    <div class="gallery-head" id="gallery">
+      <h2>Favorite views</h2>
+      <p>A tightly curated gallery</p>
     </div>
 
     <section class="gallery" aria-label="Curated horseback riding photo gallery">
       <button class="shot" data-full="assets/horses/featured/fb-10232075815898722.jpg"><img loading="lazy" src="assets/horses/featured/fb-10232075815898722.jpg" alt="Bree riding through vivid red hoodoo country under a blue sky"></button>
-      <button class="shot" data-full="assets/horses/featured/fb-10234185191471793.jpg"><img loading="lazy" src="assets/horses/featured/fb-10234185191471793.jpg" alt="View from horseback beside a glassy mountain lake reflecting dramatic peaks"></button>
-      <button class="shot" data-full="assets/horses/featured/fb-10234294020632454.jpg"><img loading="lazy" src="assets/horses/featured/fb-10234294020632454.jpg" alt="Horse and rider silhouetted against daylight at the end of a mountain tunnel"></button>
+      <button class="shot" data-full="assets/horses/featured/fb-10234294020632454.jpg"><img loading="lazy" src="assets/horses/featured/fb-10234294020632454.jpg" alt="Horse and rider silhouetted at the end of a mountain tunnel"></button>
       <button class="shot" data-full="assets/horses/featured/fb-10234294021752482.jpg"><img loading="lazy" src="assets/horses/featured/fb-10234294021752482.jpg" alt="Riding horseback across a wooden bridge through mountain forest"></button>
-      <button class="shot" data-full="assets/horses/featured/fb-10234315727055101.jpg"><img loading="lazy" src="assets/horses/featured/fb-10234315727055101.jpg" alt="Paint horse standing beneath a brilliant orange sunset"></button>
-      <button class="shot" data-full="assets/horses/featured/fb-10244319558584637.jpg"><img loading="lazy" src="assets/horses/featured/fb-10244319558584637.jpg" alt="Horseback view above a brilliant turquoise alpine lake"></button>
+      <button class="shot" data-full="assets/horses/featured/fb-10243779678727978.jpg"><img loading="lazy" src="assets/horses/featured/fb-10243779678727978.jpg" alt="Bree celebrating from horseback high in the mountains"></button>
       <button class="shot" data-full="assets/horses/featured/fb-10244955119033251.jpg"><img loading="lazy" src="assets/horses/featured/fb-10244955119033251.jpg" alt="Bree riding her paint horse with a snow-dusted mountain behind her"></button>
-      <button class="shot" data-full="assets/horses/featured/fb-10244955114953149.jpg"><img loading="lazy" src="assets/horses/featured/fb-10244955114953149.jpg" alt="Horseback riding beneath brilliant golden autumn aspens"></button>
       <button class="shot" data-full="assets/horses/featured/fb-10244955117553214.jpg"><img loading="lazy" src="assets/horses/featured/fb-10244955117553214.jpg" alt="Bree and her paint horse in a meadow framed by golden aspens"></button>
-      <button class="shot" data-full="assets/horses/featured/fb-10244955119993275.jpg"><img loading="lazy" src="assets/horses/featured/fb-10244955119993275.jpg" alt="Riding toward a brilliant stand of golden aspens"></button>
+    </section>
+
+    <section class="recommends">
+      <div class="rec-inner">
+        <div class="section-head" style="margin:0;padding:0">
+          <h2>Bree recommends</h2>
+          <p>This section can grow from firsthand experience, not generic internet lists.</p>
+        </div>
+        <div class="rec-grid">
+          <article class="rec"><span class="num">01</span><h3>Trails</h3><p>Favorite rides worth hauling to, plus what made each one memorable.</p></article>
+          <article class="rec"><span class="num">02</span><h3>Horse camps</h3><p>Places worth staying, with practical notes for trailers, horses and riders.</p></article>
+          <article class="rec"><span class="num">03</span><h3>Gear</h3><p>The trail, camping and hauling gear Bree actually uses and would recommend again.</p></article>
+        </div>
+      </div>
     </section>
 
     <section class="quote">
@@ -271,9 +291,7 @@
       });
     });
     document.querySelector(".close").addEventListener("click",()=>dialog.close());
-    dialog.addEventListener("click",event=>{
-      if(event.target===dialog) dialog.close();
-    });
+    dialog.addEventListener("click",event=>{if(event.target===dialog)dialog.close()});
   </script>
 </body>
 </html>
