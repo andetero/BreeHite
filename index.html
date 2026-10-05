@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Bree Hite | Horseback Travel Journal</title>
   <meta name="description" content="Bree Hite's horseback travel journal: scenic rides, trail notes, horse camping, favorite places and stories from the saddle.">
-  <meta name="theme-color" content="#11130f">
+  <meta name="theme-color" content="#f3efe6" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#11130f" media="(prefers-color-scheme: dark)">
   <style>
     :root{
       --ink:#11130f;
@@ -16,6 +17,7 @@
       --max:1460px;
     }
     *{box-sizing:border-box}
+    :root{color-scheme:light dark}
     html{scroll-behavior:smooth}
     body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif}
     img{display:block;max-width:100%}
@@ -117,6 +119,22 @@
       .feature-stack .feature-card{min-height:62vh}
       .gallery{columns:1}
       .check-grid{grid-template-columns:1fr}
+    }
+    @media(prefers-color-scheme:dark){
+      :root{
+        --paper:#141612;
+        --paper2:#1b1e19;
+        --muted:#a6aa9d;
+        --line:rgba(255,255,255,.14);
+      }
+      body{color:#f2efe7}
+      .intro p,.utility-copy p,.ride-body p,.rec p{color:#c9cdc1}
+      .journal,.recommends{background:#1b1e19}
+      .ride-card,.rec{background:#151713;border-color:rgba(255,255,255,.08)}
+      .ride-meta span{color:#bbc0b3}
+      .feature-card,.shot{background:#23271f}
+      .rec-grid{background:rgba(255,255,255,.14)}
+      .rec-links a:hover{background:#f2efe7;color:#11130f}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.shot img{transition:none}}
   </style>
